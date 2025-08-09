@@ -2,22 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
+All colors MUST be HSL. */
 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 222.2 50% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 222.2 50% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 222.2 50% 10%;
 
-    --primary: 222.2 47.4% 11.2%;
+    /* Brand: confident blue */
+    --primary: 222 80% 45%; /* brand blue */
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -26,7 +26,7 @@ All colors MUST be HSL.
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
+    --accent: 204 94% 49%; /* cyan accent */
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
@@ -34,35 +34,33 @@ All colors MUST be HSL.
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 222 80% 45%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
+    --sidebar-primary: 222 80% 45%;
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Gradients & shadows */
+    --gradient-primary: radial-gradient(120% 120% at 50% -20%, hsl(var(--primary)), hsl(var(--primary) / 0.85) 40%, hsl(var(--accent) / 0.5) 80%);
+    --gradient-surface: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted) / 0.3));
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.25);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    --background: 222.2 84% 5.5%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
+    --card: 222.2 84% 6.5%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222.2 84% 4.9%;
+    --popover: 222.2 84% 6.5%;
     --popover-foreground: 210 40% 98%;
 
     --primary: 210 40% 98%;
@@ -74,7 +72,7 @@ All colors MUST be HSL.
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 217.2 32.6% 17.5%;
+    --accent: 204 94% 49%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
@@ -91,6 +89,10 @@ All colors MUST be HSL.
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --gradient-primary: radial-gradient(120% 120% at 50% -20%, hsl(var(--primary) / 0.95), hsl(var(--primary) / 0.7) 40%, hsl(var(--accent) / 0.4) 80%);
+    --gradient-surface: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted) / 0.15));
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.35);
   }
 }
 
@@ -100,6 +102,10 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
   }
+
+  /* Utilities bound to tokens */
+  .shadow-elegant { box-shadow: var(--shadow-elegant); }
+  .card-surface { background-image: var(--gradient-surface); }
 }

@@ -14,7 +14,60 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      courses: {
+        Row: {
+          category: string | null
+          created_at: string
+          created_by: string
+          currency: string
+          description: string | null
+          id: string
+          image_url: string | null
+          learners_count: number
+          level: string | null
+          price_cents: number
+          published: boolean
+          rating: number
+          slug: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          category?: string | null
+          created_at?: string
+          created_by: string
+          currency?: string
+          description?: string | null
+          id?: string
+          image_url?: string | null
+          learners_count?: number
+          level?: string | null
+          price_cents?: number
+          published?: boolean
+          rating?: number
+          slug: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          category?: string | null
+          created_at?: string
+          created_by?: string
+          currency?: string
+          description?: string | null
+          id?: string
+          image_url?: string | null
+          learners_count?: number
+          level?: string | null
+          price_cents?: number
+          published?: boolean
+          rating?: number
+          slug?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

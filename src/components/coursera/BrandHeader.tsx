@@ -7,7 +7,7 @@ export const BrandHeader = () => {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <a href="/" className="flex items-center gap-2">
           <GraduationCap className="h-6 w-6 text-primary" aria-hidden />
-          <span className="font-semibold">Coursera Clone</span>
+          <span className="font-semibold">Coursewallah</span>
         </a>
         <nav className="hidden md:flex items-center gap-6 text-sm">
           <a href="#categories" className="text-muted-foreground hover:text-foreground">Categories</a>

@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 const testimonials = [
   {
     quote: "The courses helped me change careers into data science.",
-    author: "Alex R.",
+    author: "Soumya R.",
   },
   {
     quote: "University-grade content with flexible learning.",
